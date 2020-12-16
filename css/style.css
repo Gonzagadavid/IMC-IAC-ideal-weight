@@ -1,0 +1,82 @@
+body {
+    margin: 0%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+  font-size: 50px;
+  color: rgb(80, 36, 121);
+  width: 70 rem;
+  height: 13rem;
+  background-image: url(/img/calculadora\ peso\ ideal.jpg);
+  background-size: 90rem 13rem;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(140, 38, 235);
+    padding: 15px;
+    font-size: 22px;
+}
+
+.calc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%; 
+    padding: 13px;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(140, 130, 231);
+    padding: 50px;
+    font-size: 20px;
+}
+
+.info {
+    border: none;
+    outline: none;
+    background-color: rgb(140, 38, 235);
+    font-size: 17px;
+    padding: 5px;
+}
+
+.chkInfo{
+    box-shadow: inset rgb(140, 38, 235) 0 -5px 12px, inset rgb(140, 130, 231) 0 1px 3px, rgba(140, 130, 231, 0.4) 0 1px;
+
+}
+
+.btn{
+    cursor: pointer;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+@media(max-width: 500px){
+    header{
+        display: none;
+    }
+
+    .container{
+        flex-direction: column;
+    }
+
+    .calc{
+        width: 100%;
+    }
+}

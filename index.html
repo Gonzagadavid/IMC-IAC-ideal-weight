@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>IMC / IAC</title>
+</head>
+<body>
+    <header>
+        <h1>IMC e IAC</h1>
+    </header>
+    <div class="text">
+        <h2>O que é IMC</h2>
+        <p>IMC é a sigla para índice de massa corporal. Ela é uma medida internacional usada para fazer o cálculo se uma pessoa está no peso ideal, abaixo ou com sobrepeso. Esse é um método fácil e rápido para a avaliação do nível de gordura de cada pessoa, ou seja, é um preditor internacional de obesidade adotado pela Organização Mundial da Saúde (OMS).</p>
+    </div>
+    <div class="container">
+        <div class="calc">  
+            <form >
+                <p>Altura:</p>
+                <input type="number" name="alturaIMC" id="alturaIMC" class="info" autocomplete="off" step="0.01">
+                <label for="alturaIMC">metros(m)</label>
+                <p>Peso:</p>
+                <input type="number" name="peso" id="peso" class="info" autocomplete="off" >
+                <label for="peso">quilogramas(kg)</label><br><br>
+                <button id="calcIMC" class="info btn" >Calcular</button>
+            </form>
+        </div>
+      
+        <div id="fBIMC" class="calc">
+          <div id= "grauIMC"  ></div>
+          <div id="pesoIdeal" ></div>
+        </div>
+    </div>
+    <div class="text">
+        <h2>O que é IAC</h2>
+        <p>O IAC significa Índice de Adiposidade Corporal. É um novo método que usa o tamanho dos quadris para medir a gordura do corpo e segue a seguinte lógica: Quanto maior forem os quadris em relação à altura, mais acima do peso se está.</p>
+    </div>
+    <div class="container">
+        <div class="calc">  
+            <form >
+                <p>Quadril:</p>
+                <input type="number" name="quadril" id="quadril" class="info" autocomplete="off">
+                <label for="quadril">centimetros(cm)</label>
+                <p>Altura:</p>
+                <input type="number" name="alturaIAC" id="alturaIAC" class="info" autocomplete="off">
+                <label for="alturaIAC">metros(m)</label><br><br>
+                <input type="checkbox" name="homem" id="homem" class="chkInfo">
+                <label for="homem">Homem</label>
+                <input type="checkbox" name="mulher" id="mulher" class="chkInfo">
+                <label for="mulher">Mulher</label><br><br>
+                <button id="calcIAC" class="info btn" >Calcular</button>
+           </form>
+        </div>
+        <div id="fBIAC" class="calc">
+        </div>
+    </div>
+    <script type="text/javascript" src="js/calc_imc.js"></script>
+    <script type="text/javascript" src="js/calc_iac.js"></script>
+</body>
+</html>
