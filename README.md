@@ -6,7 +6,8 @@ O cálculo do IMC foi o meu primeiro projeto pessoal,  conforme meu conhecimento
 
 CSS :
 
-- O uso de uma classe para diversos elementos de mesmo tema, tornando o código mais enxuto.
+- O uso de uma classe para diversos elementos de mesmo tema, tornando o código mais enxuto;
+- Responsividade da página para diversos tamanhos de visores. 
 
 DOM/JavaScript:
 
