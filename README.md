@@ -17,6 +17,6 @@ DOM/JavaScript:
 
 JavaScript:
 
-- IMC: os dados são calculados e verificados para retornar o feedback correto ao usuário através de funções de call-back;  
+- IMC: os dados são calculados e verificados para retornar o feedback correto ao usuário através de funções;  
 - IAC: através de uma função construtora  é criado uma instância, passando os dados como parâmetros. Utilizando métodos é calculado o IAC e verificado o nível para retornar o feedback correto ao usuário. 
 - Peso ideal: no campo do IMC também é calculado o peso ideal do usuário, quando passado somente a altura ou a altura e o peso.
