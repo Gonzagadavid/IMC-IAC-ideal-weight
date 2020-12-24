@@ -1,94 +1,94 @@
 ;(function () {
   'use strict'
 
-  const quadril = document.getElementById('quadril')
-  const alturaIAC = document.getElementById('alturaIAC')
-  const homem = document.getElementById('homem')
-  const mulher = document.getElementById('mulher')
+  const hip = document.getElementById('hip')
+  const heightIAC = document.getElementById('heightIAC')
+  const man = document.getElementById('man')
+  const woman = document.getElementById('woman')
   const calcBtn = document.getElementById('calcIAC')
   const fBIAC = document.getElementById('fBIAC')
-  let sexo = ''
+  let gender = ''
 
   calcBtn.disabled = true
 
-  // caso o check-box homem esteja habilitado, desabilita o check-box mulher e passa como valor para a variável,
+  // caso o check-box homem esteja habilitado, desabilita o check-box mulher, passa como valor para a variável,
   // e chama a função que habilita o botão
   // caso o check-box estaja desabilitado, limpa o valor da variável e chama a função que habilita o botão
-  homem.addEventListener('change', desaMulher)
-  function desaMulher () {
-    mulher.checked = false
-    sexo = 'homem'
-    if (homem.checked === false) { sexo = '' }
+  man.addEventListener('change', womanDesable)
+  function womanDesable () {
+    woman.checked = false
+    gender = 'man'
+    if (man.checked === false) { gender = '' }
     enableBtn()
   }
 
-  // caso o check-box mulher esteja habilitado, desabilita o check-box homem e passa como valor para a variável,
+  // caso o check-box mulher esteja habilitado, desabilita o check-box homem, passa como valor para a variável,
   // e chama a função que habilita o botão
   // caso o check-box estaja desabilitado, limpa o valor da variável e chama a função que habilita o botão
-  mulher.addEventListener('change', desaHomem)
-  function desaHomem () {
-    homem.checked = false
-    sexo = 'mulher'
-    if (mulher.checked === false) { sexo = '' }
+  woman.addEventListener('change', manDesable)
+  function manDesable () {
+    man.checked = false
+    gender = 'woman'
+    if (woman.checked === false) { gender = '' }
     enableBtn()
   }
 
   // verifica se o campo quadril foi preenchido valor válido, caso o valor seja válido chama a função que habilita o botão
   // caso o valor não seja válido o botão é desabilitado
-  quadril.addEventListener('input', verificaQuadril)
-  function verificaQuadril () {
-    if (quadril.value < 40 || quadril.value > 400) {
+  hip.addEventListener('input', checkHip)
+  function checkHip () {
+    if (hip.value < 40 || hip.value > 400) {
       calcBtn.disabled = true
     } else {
       enableBtn()
     }
-    quadril.removeEventListener('input', verificaQuadril)
+    hip.removeEventListener('input', checkHip)
   }
 
   // verifica se o campo altura foi preenchido valor válido, caso o valor seja válido chama a função que habilita o botão
   // caso o valor não seja válido o botão é desabilitado
-  alturaIAC.addEventListener('input', verificaAltura)
-  function verificaAltura () {
-    if (alturaIAC.value > 2.3 || alturaIAC.value < 1) {
+  heightIAC.addEventListener('input', checkHeight)
+  function checkHeight () {
+    if (heightIAC.value > 2.3 || heightIAC.value < 1) {
       calcBtn.disabled = true
     } else {
       enableBtn()
     }
-    alturaIAC.removeEventListener('input', verificaAltura)
+    heightIAC.removeEventListener('input', checkHeight)
   }
 
   // verifica se todos os campos estão preenchidos, caso esteja o botão é habilitado, caso não o botão é desabilitado
   function enableBtn () {
-    if (quadril.value && alturaIAC.value && sexo) {
+    if (hip.value && heightIAC.value && gender) {
       calcBtn.disabled = false
     } else {
       calcBtn.disabled = true
     }
   }
 
-  // função construtora do objeto pessoa, recebendo o dados como parâmentro, e gerendo métodos para os cálculos necessário
-  function Pessoa (quadril, altura, sexo) {
-    this.quadril = quadril
-    this.altura = altura
-    this.sexo = sexo
+  // função construtora do objeto pessoa, recebendo o dados como parâmentro, gerando métodos para os cálculos necessário
+  function Person (hip, height, gender) {
+    this.hip = hip
+    this.height = height
+    this.gender = gender
 
     // método para calcular o IAC
     this.iAC = function () {
-      return ((parseFloat(this.quadril) / (parseFloat(this.altura) * (Math.sqrt(parseFloat(this.altura))))) - 18).toFixed(2)
+      return ((parseFloat(this.hip) / (parseFloat(this.height) * (Math.sqrt(parseFloat(this.height))))) - 18).toFixed(2)
     }
 
-    // método que verifica a váriavel sexo que chama a função que verifica o nível
+    // método que verifica a váriavel gender que chama a função que verifica o nível
     // de acordo com o valor passando o resultado do IAC como parâmetro
-    this.nivel = function () {
-      if (this.sexo === 'homem') {
-        return fBHomem(this.iAC())
+    this.grade = function () {
+      if (this.gender === 'man') {
+        return fBMan(this.iAC())
       } else {
-        return fBMulher(this.iAC())
+        return fBWoman(this.iAC())
       }
     }
 
-    // recebe o resultado do IAC como parâmetro e retorna o nível do IAC para homem
-    function fBHomem (iac) {
+    // recebe o resultado do IAC como parâmetro e retorna o nível do IAC para fBMan
+    function fBMan (iac) {
       if (iac < 8) {
         return 'Abaixo do peso'
       } else if (iac <= 21) {
@@ -100,8 +100,8 @@
       }
     }
 
-    // recebe o resultado do IAC como parâmetro e retorna o nível do IAC para mulher
-    function fBMulher (iac) {
+    // recebe o resultado do IAC como parâmetro e retorna o nível do IAC para FBWoman
+    function fBWoman (iac) {
       if (iac < 21) {
         return 'Abaixo do peso'
       } else if (iac <= 32) {
@@ -114,22 +114,22 @@
     }
   }
 
-  // limpa o campo de feedback, constroi o objeto usuario com a função construtora Pessoa e chama
+  // limpa o campo de feedback, constroi o objeto user com a função construtora Person e chama
   // a função de feedback passando o resultado dos metodos como parâmetro
-  calcBtn.addEventListener('click', calculaIMC)
-  function calculaIMC (e) {
+  calcBtn.addEventListener('click', calcIAC)
+  function calcIAC (e) {
     e.preventDefault()
 
     fBIAC.textContent = ''
 
-    const usuario = new Pessoa(quadril.value, alturaIAC.value, sexo)
+    const user = new Person(hip.value, heightIAC.value, gender)
 
-    fBMessage(usuario.nivel(), usuario.iAC())
+    fBMessage(user.grade(), user.iAC())
   }
 
   // recebe o valor do IAC e o nível como parâmetro e retorna o feedback para o usuário
-  function fBMessage (nivel, iac) {
-    switch (nivel) {
+  function fBMessage (grade, iac) {
+    switch (grade) {
       case 'Abaixo do peso' :
         fBIAC.innerHTML = `Cuidado!<br><br> O seu IAC é de ${iac} <br><br>
       isso significa que você pode está abaixo do peso.<br><br>Procure um médico`
