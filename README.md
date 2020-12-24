@@ -1,22 +1,25 @@
-# Cálculo do IMC, IAC  e peso ideal :no_entry_sign: :hamburger: :fries: 
+#  Calculation of BMI, IAC and ideal weight :no_entry_sign: :hamburger: :fries: 
 
 
 
-O cálculo do IMC foi o meu primeiro projeto pessoal,  conforme meu conhecimento foi avançando visualizei a necessidade de refazê-lo. Além disso, adicionei o cálculo do IAC para colocar em prática duas abordagens diferentes de códigos no mesmo projeto.
+Calculating BMI was my first personal project, as my knowledge progressed, I saw the need to redo it. In addition, I added the IAC calculation to put two different code approaches into practice on the same project.
 
 CSS :
 
-- O uso de uma classe para diversos elementos de mesmo tema, tornando o código mais enxuto;
-- Responsividade da página para diversos tamanhos de visores. 
+-  The use of a class for several elements of the same theme, making the code leaner;
 
-DOM/JavaScript:
+-  Page responsiveness for different display sizes.
 
-- A utilização de formulários para requisição de dados do usuário;
-- A manipulação de elementos através do ID ;
-- O uso de check-box.
+  
+
+  DOM/JavaScript:
+
+-  The use of forms to request user data;
+-  The manipulation of elements through the ID;
+-  The use of check-boxes.
 
 JavaScript:
 
-- IMC: os dados são calculados e verificados para retornar o feedback correto ao usuário através de funções;  
-- IAC: através de uma função construtora  é criado uma instância, passando os dados como parâmetros. Utilizando métodos é calculado o IAC e verificado o nível para retornar o feedback correto ao usuário. 
-- Peso ideal: no campo do IMC também é calculado o peso ideal do usuário, quando passado somente a altura ou a altura e o peso.
+-  BMI: data are calculated and verified to return the correct feedback to the user through functions;
+- IAC: through a constructor function, an instance is created, passing the data as parameters. Using methods, the IAC is calculated and the level is checked to return the correct feedback to the user
+-  Ideal weight: in the field of BMI, the user's ideal weight is also calculated, when only height or height and weight are passed
